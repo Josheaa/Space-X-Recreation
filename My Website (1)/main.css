@@ -1,0 +1,1013 @@
+@font-face {
+font-family: myFirstFont;
+src: url(Fontspring-DEMO-organetto-cndlight.otf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*, *::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: myFirstFont;
+    background: #000;
+    color: white;
+}
+
+/* Header/Navbar */
+
+.headerNav a {
+    text-decoration: none;
+    color: white;
+}
+
+.headerNav ul {
+    list-style: none;
+}
+
+.headerNav {
+    background-color: transparent;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    letter-spacing: 0.5px;
+    padding: 48px 50px;
+    padding-right: 80px;
+    top: 0;
+    z-index: 3;
+}
+
+/* Logo */
+.logo {
+    width: 210px;
+    height: auto;
+}
+
+.logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+/* Desktop Nav*/
+.mainNav {
+    margin-right: 50px;
+}
+
+.mainNav ul {
+    display: flex;
+}
+
+.mainNav ul li {
+    position: relative;
+    margin-right: 20px;
+    padding-bottom: 2px;
+}
+
+/* Untuk Hover nav + pengaturan tulisan*/
+.mainNav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.mainNav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.4s;
+}
+
+/* Bawah ini sudah mobile Nav/hamburger */
+
+/* Hamburger Menu */
+
+.mobile-main-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.mobile-main-menu ul {
+    list-style: none;
+}
+
+.hamburger {
+    position: fixed;
+    top: 40px;
+    right: 20px;
+    z-index: 10;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    top: 0;
+    left: 0;
+    background: white;
+    transition: all 0.4s;
+}
+
+.hamburger-middle {
+    transform: translateY(5px);
+}
+
+.hamburger-bottom {
+    transform: translateY(10px);
+}
+
+/* Transition hamburger ke X ketika open */
+.open {
+    transform: rotate(90deg);
+}
+
+.open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-middle {
+    display: none;
+}
+
+.open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+/* Overlay */
+.overlay-show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3;
+}
+
+/* Stop body scroll */
+.stop-scrolling {
+    overflow: hidden;
+}
+
+/* Menyembunyikan mobile main menu items */
+.mobile-only {
+    display: none;
+}
+
+/* Mobile menu */
+.mobile-main-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: black;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%); 
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Bring Mobile Nav from right */
+.show-menu {
+    transform: translateX(0);
+}
+
+.mobile-main-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+} 
+
+.mobile-main-menu ul li {
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-transform: uppercase;
+    border-bottom: 2px #555 solid;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 8px;
+}
+
+.mobile-main-menu ul li a {
+    color: white;
+    transition: color 0.8s;
+}
+
+.mobile-main-menu ul li a:hover {
+    color: #aaa;
+}
+
+/* Sticky Nav */
+.sticky {
+    position: fixed;
+    top: 0;
+    background: rgba(255,255,255,0.75);
+}
+
+/* content 1*/
+
+.card1 {
+    width: 100%;
+    height: 102vh;
+    background-image: url(./Asset/spacex\ 1.png);
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 10px;
+    position: relative;
+}
+
+.crdv1 {
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    align-self: flex-end;
+    translate: 0 61.5%;
+}
+
+.p1c1 {
+    font-size: 20px;
+}
+
+.p2c1 {
+    font-size: 60px;
+}
+
+.p3c1 {
+    background: none;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 3px solid white;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 190px;
+    min-height: 63px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.p3c1:hover {
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.p3c1::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.btnpc1::before {
+    transform: scaleX(0);
+}
+
+.btnpc1:hover::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+/* PopUp Card 1 */
+
+.popupyt1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.popupyt1 h1 {
+    transform: translateX(196px);
+}
+
+.popupyt1 iframe {
+    padding: 2%;
+    transform: translateX(3px);
+}
+
+.clsbtnv1 {
+    display: block;
+    background-color: transparent;
+    margin: 0 0 5px auto;
+    font-size: 35px;
+    /* transform: translateX(500px); */
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#blurbackgroundc1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 102vh;
+    background-image: url(path/to/blur-image.jpg);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    display: none;
+}
+
+/* Content 2 */
+
+.card2 {
+    width: 100%;
+    height: 102vh;
+    background-image: url(./Asset/spacex\ 2.jpg);
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 10px;
+    position: relative;
+}
+
+.crdv2 {
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    align-self: flex-end;
+    translate: 0 61.5%;
+}
+
+.p1c2 {
+    font-size: 20px;
+}
+
+.p2c2 {
+    font-size: 60px;
+}
+
+.p3c2 {
+    background: none;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 3px solid white;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 190px;
+    min-height: 63px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.p3c2:hover {
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.p3c2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.btnpc2::before {
+    transform: scaleX(0);
+}
+
+.btnpc2:hover::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+/* PopUp Card 2 */
+
+.popupyt2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.popupyt2 h1 {
+    transform: translateX(220px);
+}
+
+.popupyt2 iframe {
+    padding: 2%;
+    transform: translateX(3px);
+}
+
+.clsbtnv2 {
+    display: block;
+    background-color: transparent;
+    margin: 0 0 5px auto;
+    font-size: 35px;
+    /* transform: translateX(500px); */
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#blurbackgroundc2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 102vh;
+    background-image: url(path/to/blur-image.jpg);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    display: none;
+}
+
+/* Content 3 */
+
+.card3 {
+    width: 100%;
+    height: 102vh;
+    background-image: url(./Asset/spacex\ 3.jpg);
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 10px;
+    position: relative;
+}
+
+.crdv3 {
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    align-self: flex-end;
+    translate: 0 35%;
+}
+
+.p1c3 {
+    font-size: 20px;
+}
+
+.p2c3 {
+    font-size: 55px;
+}
+
+.p3c3 {
+    background: none;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 3px solid white;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 190px;
+    min-height: 63px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.p3c3:hover {
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.p3c3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.btnpc3::before {
+    transform: scaleX(0);
+}
+
+.btnpc3:hover::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+/* PopUp Card 3 */
+
+.popupyt3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.popupyt3 h1 {
+    transform: translateX(170px);
+}
+
+.popupyt3 iframe {
+    padding: 2%;
+    transform: translateX(3.5px);
+}
+
+.clsbtnv3 {
+    display: block;
+    background-color: transparent;
+    margin: 0 0 5px auto;
+    font-size: 35px;
+    /* transform: translateX(500px); */
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#blurbackgroundc3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 102vh;
+    background-image: url(path/to/blur-image.jpg);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    display: none;
+}
+
+/* Content 4 */
+
+.card4 {
+    width: 100%;
+    height: 102vh;
+    background-image: url(./Asset/spacex\ 4.jpg);
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 10px;
+    position: relative;
+}
+
+.crdv4 {
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    align-self: flex-end;
+    translate: 0 35%;
+}
+
+.p1c4 {
+    font-size: 53px;
+}
+
+.p2c4 {
+    background: none;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 3px solid white;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 190px;
+    min-height: 63px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.p2c4:hover {
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.p2c4::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.btnpc4::before {
+    transform: scaleX(0);
+}
+
+.btnpc4:hover::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+/* Content 5 */
+
+.card5 {
+    width: 100%;
+    height: 102vh;
+    background-image: url(./Asset/spacex\ 5.jpg);
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 10px;
+    position: relative;
+}
+
+.crdv5 {
+    padding: 20px;
+    width: 95%;
+    border-radius: 5px;
+    align-self: flex-end;
+    translate: 0 35%;
+}
+
+.p1c5 {
+    font-size: 20px;
+}
+
+.p2c5 {
+    font-size: 55px;
+}
+
+.p3c5 {
+    background: none;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 3px solid white;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 12px 20px;
+    min-width: 190px;
+    min-height: 63px;
+    transition: color 0.4s linear;
+    position: relative;
+}
+
+.p3c5:hover {
+    color: black;
+    font-weight: bolder;
+    font-size: 13px;
+}
+
+.p3c5::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transform-origin: right center;
+    cursor: pointer;
+}
+
+.btnpc5::before {
+    transform: scaleX(0);
+}
+
+.btnpc5:hover::before {
+    transform: scaleX(1);
+    transform-origin: left center;
+    transition-duration: 0.8s;
+}
+
+/* Pop Up Card 5 */
+
+.popupyt5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    color: black;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+}
+
+.popupyt5 h1 {
+    transform: translateX(199px);
+}
+
+.popupyt5 iframe {
+    padding: 2%;
+    transform: translateX(3px);
+}
+
+.clsbtnv5 {
+    display: block;
+    background-color: transparent;
+    margin: 0 0 5px auto;
+    font-size: 35px;
+    /* transform: translateX(500px); */
+    color: #c5c5c5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#blurbackgroundc5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 102vh;
+    background-image: url(path/to/blur-image.jpg);
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    display: none;
+}
+
+/* Footer */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding-left: 23px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: black;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: white;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: white;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: white;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.footer-col .social-links a:nth-child(1):hover {
+    color: white;
+    background-color: rgb(57, 74, 226);
+}
+
+.footer-col .social-links a:nth-child(2):hover {
+    color: white;
+    background-color: hsl(329, 90%, 55%);
+}
+
+.footer-col .social-links a:nth-child(3):hover {
+    color: white;
+    background-color: rgb(3, 132, 225);
+}
+
+/* Footer Responsive */
+
+@media(max-width: 767px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/* Responsive all */
+
+@media(max-width: 1153px) {
+    /* Menutup dekstop Nav */
+    .mainNav {
+        display: none;
+    }
+    
+    .logo {
+        width: 555;
+        translate: -38px 0;
+        margin-top: 0px;
+    }
+    
+    /* Memunculkan Mobile Nav */
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media(max-width: 600px) {
+    .P2C {
+        font-size: 54px;
+    }
+    
+    .logo {
+        width: 555;
+        translate: -38px 0;
+        margin-top: 0px;
+    }
+
+    .content2 {
+        translate: -35 0px;
+    }
+
+     /* Card pop up */
+        .popup {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+}
+
+@media(max-width: 500px) {
+    .P2C {
+        font-size: 51px;
+    }
+
+    .content2 {
+        translate: -35 0px;
+    }
+        .popupyt1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+}
+
+@media(max-width: 457px) {
+    .P2C {
+        font-size: 40px;
+    }
+
+    .content2 {
+        translate: -35 0px;
+    }
+
+    /* Card pop up */
+        .popupyt1 {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+}
